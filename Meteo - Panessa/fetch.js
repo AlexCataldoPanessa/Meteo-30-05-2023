@@ -114,18 +114,21 @@ function mostraGiorno(giorno) {
 }
 
 function mostraGiornoFuturo(giorno) {
-  let contenitore = document.getElementById("contenitoreTempoFuturo");
-  let contatore = 0;
+  let contatore = 1;
+
+
   for (dataCompleta of giorno.time) {
-    contatore++;
+
+    let contenitore = document.getElementById("contenitoreTempoFuturo" + contatore);
+    console.log(contenitore);
     let h5 = document.createElement("h5");
     let invertiData = giorno.time[contatore].split('-').reverse().join('/');
 
     h5.className = "giornoHtml" + contatore
     let pId = document.getElementById("giornoHtml" + contatore);
     pId.appendChild(h5);
-    console.log(pId);
-
+    
+    contatore++;
   }
 
 }
