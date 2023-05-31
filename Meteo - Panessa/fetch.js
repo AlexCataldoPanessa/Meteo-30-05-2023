@@ -9,7 +9,7 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=45.07&longitude=7.69&curr
 
     mostraTempo(tempoCorrente);
     mostraGiorno(giorno);
-    //mostraTempoFuturo(giorno);
+    mostraTempoFuturo(giorno);
     mostraGiornoFuturo(giorno);
 
 
@@ -135,9 +135,9 @@ function mostraGiornoFuturo(giorno) {
 
 
 function mostraTempoFuturo(giorno) {
-  let contenitore = document.getElementById("contenitoreTempoFuturo");
-  let cont = 0;
-
+  
+  let cont = 1;
+  let contenitore = document.getElementById("contenitoreTempoFuturo"+cont);
 
 
 
@@ -145,7 +145,7 @@ function mostraTempoFuturo(giorno) {
   for (code of giorno.weathercode) {
     let p = document.createElement("p");
 
-    cont++;
+    
     p.className = "tempoFuturo" + cont;
 
     switch (code) {
@@ -225,7 +225,7 @@ function mostraTempoFuturo(giorno) {
 
 
 
-
+    cont++;
 
   }
 
